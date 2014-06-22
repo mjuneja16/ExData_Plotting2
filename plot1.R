@@ -11,7 +11,7 @@ NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 ##aggregate the 'Emissions' (in the United States) by year
 Emissions<-aggregate(NEI[,"Emissions"],by=list(NEI$year), FUN = sum)
-##remane the columns names of the data set 'Emissions' as 'Year' and 'Total.Emissions'
+##rename the columns names of the data set 'Emissions' as 'Year' and 'Total.Emissions'
 colnames(Emissions)<-c("Year","Total.Emissions")
 ##change the units of the variable 'Total.Emissions' to kilotons
 Emissions$Total.Emissions<-round(Emissions[,2]/1000,2)
