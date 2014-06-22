@@ -1,4 +1,4 @@
-##check in the working directory if the source files exist and then download it, if otherwise.
+##check in the working directory if the source files exist and then download it, if otherwise
 if(!file.exists("./Source_Classification_Code.rds") & !file.exists("./summarySCC_PM25.rds"))
 {
   fileUrl<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"
