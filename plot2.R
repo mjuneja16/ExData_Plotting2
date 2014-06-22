@@ -13,7 +13,7 @@ SCC <- readRDS("Source_Classification_Code.rds")
 NEI_MD<-subset(NEI,NEI$fips=="24510")
 ##aggregate the 'Emissions' (in the Baltimore City, MD) by year
 Emissions_MD<-aggregate(NEI_MD[,"Emissions"],by=list(NEI_MD$year), FUN = sum)
-##remane the columns names of the data set 'Emissions' as 'Year' and 'Total.Emissions'
+##rename the columns names of the data set 'Emissions' as 'Year' and 'Total.Emissions'
 colnames(Emissions_MD)<-c("Year","Total.Emissions")
 Emissions_MD<-transform(Emissions_MD,Year=factor(Year))
 ##open the PNG file device in the working directory
