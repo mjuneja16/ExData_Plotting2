@@ -13,7 +13,7 @@ SCC <- readRDS("Source_Classification_Code.rds")
 is.motorvehicle<-grep("Mobile.*Road",SCC$EI.Sector,ignore.case=TRUE)
 MotorVehicle<-SCC[is.motorvehicle,]
 Emissions_Mv<-NEI[(NEI$SCC %in% MotorVehicle$SCC),]
-##use subset function to access the contents of only Baltimore City and name the data set as 'Emissions_MvMD'
+##use subset function to extract the contents of only Baltimore City and name the data set as 'Emissions_MvMD'
 Emissions_MvMD<-subset(Emissions_Mv,Emissions_Mv$fips=="24510")
 ##aggregate the 'Emissions' (from the motor vehicle sources in the Baltimore City, MD) by year
 library(plyr)

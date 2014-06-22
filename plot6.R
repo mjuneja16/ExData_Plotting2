@@ -13,7 +13,7 @@ SCC <- readRDS("Source_Classification_Code.rds")
 is.motorvehicle<-grep("Mobile.*Road",SCC$EI.Sector,ignore.case=TRUE)
 MotorVehicle<-SCC[is.motorvehicle,]
 Emissions_Mv<-NEI[(NEI$SCC %in% MotorVehicle$SCC),]
-##use subset function to access the contents of Baltimore City & Log Angeles County and name the data set as 'Emissions_MvMDC'
+##use subset function to extract the contents of Baltimore City & Log Angeles County and name the data set as 'Emissions_MvMDC'
 Emissions_MvMDC<-subset(Emissions_Mv,Emissions_Mv$fips=="24510" | Emissions_Mv$fips== "06037")
 ##aggregate the 'Emissions' (from the motor vehicle sources in the Baltimore City & Log Angeles County) by year and fips(city)
 library(plyr)

@@ -9,7 +9,7 @@ if(!file.exists("./Source_Classification_Code.rds") & !file.exists("./summarySCC
 NEI <- readRDS("summarySCC_PM25.rds")
 ##read the contents of the other source file in the data set SCC
 SCC <- readRDS("Source_Classification_Code.rds")
-##use subset function to access the contents of only Baltimore City and name the data set as 'NEI_MD'
+##use subset function to extract the contents of only Baltimore City and name the data set as 'NEI_MD'
 NEI_MD<-subset(NEI,NEI$fips=="24510")
 ##aggregate the 'Emissions' (in the Baltimore City, MD) by year and source type
 library(plyr)
