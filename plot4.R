@@ -17,7 +17,7 @@ library(plyr)
 ##aggregate the 'Emissions' (from coal combustion-related sources in the United States) by year
 library(plyr)
 Emissions_CoalbyYear<-ddply(Emissions_Coal,.(year), summarize, total.emissions = sum(Emissions))
-##change the units of the variable 'Total.Emissions' to kilotons
+##change the units of the variable 'total.emissions' to kilotons
 Emissions_CoalbyYear$total.emissions<-round(Emissions_CoalbyYear[,2]/1000,2)
 ##open the PNG file device in the working directory
 png(filename="plot4.png",width=480,height=480,units="px")
