@@ -14,7 +14,7 @@ is.coalcomb<-grep("Fuel Comb.*Coal",SCC$EI.Sector)
 CoalCombSources<-SCC[is.coalcomb,]
 Emissions_Coal<-merge(x=NEI,y=CoalCombSources,by='SCC')
 library(plyr)
-##aggregate the 'Emissions' (in the United States) by year
+##aggregate the 'Emissions' (from coal combustion-related sources in the United States) by year
 library(plyr)
 Emissions_CoalbyYear<-ddply(Emissions_Coal,.(year), summarize, total.emissions = sum(Emissions))
 ##change the units of the variable 'Total.Emissions' to kilotons
